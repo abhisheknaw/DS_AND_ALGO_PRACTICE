@@ -1,2 +1,1 @@
-enter the no of elements:
-2147483647
+min no of insertion required to make it palindrome are:2
