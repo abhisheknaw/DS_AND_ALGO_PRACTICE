@@ -1,1 +1,1 @@
-min no of insertion required to make it palindrome are:2
+3
