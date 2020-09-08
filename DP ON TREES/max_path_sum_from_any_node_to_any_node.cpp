@@ -41,12 +41,12 @@ int diaTREE(bstnode *root,int &res)
 	int left=diaTREE(root->left,res);
 	int right=diaTREE(root->right,res);
 
-	int temp = max(left,right)+1;
-	int sol=left+right+1;
+	int temp = max(max(left,right)+root->data,root->data);
+	int sol=left+right+root->data;
 	int ans = max(temp,sol);
 	res = max(res,ans);
 	return temp;
-}
+} 
 int main() 
 {
 
@@ -60,15 +60,17 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 	int res=INT_MIN;
+	int n,x;
 	bstnode *root=NULL;
-	root=insert(root,15);
-	root=insert(root,25);
-	root=insert(root,10);
-	root=insert(root,13);
-	root=insert(root,7);
-	root=insert(root,20);
-	root=insert(root,27);
+	cout<<"enter the number of elements:\n";
+	cin>>n;
+	cout<<"enter elements:\n";
+	for(int i=0;i<n;i++)
+	{
+		cin>>x;
+		root=insert(root,x);
+	}
 	diaTREE(root,res);
 	cout<<res;
 	return 0;
-}		
+}				
