@@ -41,7 +41,7 @@ int solve(bstnode *root,int &res)
 	int left=solve(root->left,res);
 	int right=solve(root->right,res);
 
-	int temp = max(max(left,right)+root->data,root->data);
+	int temp = max(left,right)+root->data;
 	int sol=left+right+root->data;
 	int ans = max(temp,sol);
 	res = max(res,ans);
